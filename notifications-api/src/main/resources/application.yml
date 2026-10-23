@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: notification-api
+
+server:
+  port: 8081
+
+
+
+app:
+  kafka:
+    bootstrap-servers: localhost:9092
+    group-id: spring-service-group
+    topics:
+      notifications: notification.events
+    schema-registry-url: http://localhost:8081
