@@ -2,7 +2,6 @@ package com.pinapp.notifications_client.notification.infrastructure.api;
 
 
 import com.pinapp.notifications_client.notification.domain.port.NotificationRepository;
-import jakarta.websocket.server.PathParam;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;

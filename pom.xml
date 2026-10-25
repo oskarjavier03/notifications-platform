@@ -26,6 +26,7 @@
 
 	<modules>
 		<module>notifications-lib</module>
+		<module>notifications-contracts</module>
 		<module>notifications-api</module>
 		<module>notifications-client</module>
 	</modules>

@@ -3,7 +3,7 @@ spring:
     name: notification-api
 
 server:
-  port: 8081
+  port: 8181
 
 
 
@@ -14,3 +14,5 @@ app:
     topics:
       notifications: notification.events
     schema-registry-url: http://localhost:8081
+#    specific.avro.reader: true
+#    value.subject.name.strategy: io.confluent.kafka.serializers.subject.TopicRecordNameStrategy

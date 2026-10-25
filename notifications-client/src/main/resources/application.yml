@@ -10,3 +10,4 @@ app:
     topics:
       notifications: notification.events
     schema-registry-url: http://localhost:8081
+    value.subject.name.strategy: io.confluent.kafka.serializers.subject.TopicRecordNameStrategy
