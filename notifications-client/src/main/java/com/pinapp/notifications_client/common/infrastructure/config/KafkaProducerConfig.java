@@ -24,6 +24,9 @@ public class KafkaProducerConfig {
     @Value("${app.kafka.schema-registry-url}")
     private String SCHEMA_REGISTRY_URL_CONFIG;
 
+    @Value("${app.kafka.value.subject.name.strategy}")
+    private String SUBJECT_NAME_STRATEGY;
+
     @Bean
     public Map<String, Object> producerConfigs() {
         Map<String, Object> props = new HashMap<>();
@@ -31,6 +34,8 @@ public class KafkaProducerConfig {
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class);
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, KafkaAvroSerializer.class);
         props.put(AbstractKafkaSchemaSerDeConfig.SCHEMA_REGISTRY_URL_CONFIG, SCHEMA_REGISTRY_URL_CONFIG);
+        props.put("value.subject.name.strategy", SUBJECT_NAME_STRATEGY);
+
         return props;
     }
 

@@ -36,7 +36,7 @@ public class NotificationKafkaEventConsumer implements Consumer<Message<GenericR
         this.messagingUtil = messagingUtil;
     }
 
-//    @RetryableTopic(attempts = "4", exclude = {NullPointerException.class}, backOff = @BackOff(delay = 3000, multiplier = 1.5, maxDelay = 15000))
+    @RetryableTopic(attempts = "4", exclude = {NullPointerException.class}, backOff = @BackOff(delay = 3000, multiplier = 1.5, maxDelay = 15000))
     @KafkaListener(topics = "${app.kafka.topics.notifications}", groupId = "${app.kafka.group-id}", containerFactory = "kafkaListenerContainerFactory")
     @Override
     public void accept(Message<GenericRecord> genericRecordMessage) {
