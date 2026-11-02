@@ -1,4 +1,4 @@
-package com.pinapp.notifications_client.notification.infrastructure.api;
+package com.pinapp.notifications_client.notification.application;
 
 import com.pinapp.notifications_client.notification.domain.event.NotificationEmailCreatedDomainEvent;
 import com.pinapp.notifications_client.notification.domain.event.NotificationPushCreatedDomainEvent;
