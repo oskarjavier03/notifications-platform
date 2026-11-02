@@ -25,8 +25,8 @@ public class NotificationPushHandler implements CommandHandler<NotificationPushC
     public VoidResponse handle(NotificationPushCommand command) {
 
         NotificationType type = command.getType() != null
-                ? NotificationType.valueOf(command.getType().toString().trim().toLowerCase(Locale.ROOT))
-                : NotificationType.email;
+                ? NotificationType.valueOf(command.getType().toString())
+                : NotificationType.pushNotification;
 
         NotificationPush notification = new NotificationPush(
                 type, command.getMessage(), command.getDestination(), command.getSender(), command.getPermission(),

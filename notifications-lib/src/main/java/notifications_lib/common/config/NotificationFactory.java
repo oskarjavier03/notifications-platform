@@ -46,8 +46,7 @@ public final class NotificationFactory {
 
             NotificationStrategy<NotificationPush> pushStrategy = new PushNotificationStrategyImpl(validation);
 
-            NotificationStrategyRegistry strategyRegistry = new NotificationStrategyRegistry(
-                            List.of(emailStrategy, smsStrategy, pushStrategy));
+
 
             RequestHandler<SendNotificationEmailRequest, NotificationResult> emailHandler =
                     new SendNotificationEmailHandler(emailRepository);
@@ -57,6 +56,12 @@ public final class NotificationFactory {
 
             RequestHandler<SendNotificationPushRequest, NotificationResult> pushHandler =
                     new SendNotificationPushHandler(pushRepository);
+
+
+
+
+            NotificationStrategyRegistry strategyRegistry = new NotificationStrategyRegistry(
+                    List.of(emailStrategy, smsStrategy, pushStrategy));
 
             Mediator mediator = new Mediator(List.of(emailHandler, smsHandler, pushHandler));
 

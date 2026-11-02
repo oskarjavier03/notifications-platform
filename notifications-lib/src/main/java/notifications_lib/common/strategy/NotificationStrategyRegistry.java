@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class NotificationStrategyRegistry {
+public class NotificationStrategyRegistry  {
     private final Map<Class<?>, NotificationStrategy<?>> strategies = new HashMap<>();
 
     public NotificationStrategyRegistry(List<NotificationStrategy<?>> strategies) {

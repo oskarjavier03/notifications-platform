@@ -23,13 +23,13 @@ public class Mediator {
 
     public <R, T extends Request<R>> CompletableFuture<R> dispatch(T request) throws ExecutionException, InterruptedException {
         @SuppressWarnings("unchecked")
-        RequestHandler<T, R> handler= (RequestHandler<T, R>) requestHandlerMap.get(request.getClass()) ;
-        if(handler==null){
+        RequestHandler<T, R> requestHandler= (RequestHandler<T, R>) requestHandlerMap.get(request.getClass()) ;
+        if(requestHandler==null){
             log.error("No handler found for request type: {}", request.getClass());
             throw new RuntimeException("No handler found for request type: " + request.getClass());
         }
 
-        return handler.handler(request);
+        return requestHandler.handler(request);
     }
 
 }

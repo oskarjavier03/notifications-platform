@@ -26,9 +26,9 @@ public class NotificationClientContorller {
             notificationRepository.generateNotificationPushAsync(i);
         }
 
-        for (int i = 0; i < amount; i++) {
-            notificationRepository.generateNotificationSmsAsync(i);
-        }
+//        for (int i = 0; i < amount; i++) {
+//            notificationRepository.generateNotificationSmsAsync(i);
+//        }
 
     }
 

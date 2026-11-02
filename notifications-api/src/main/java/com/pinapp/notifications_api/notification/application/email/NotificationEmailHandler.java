@@ -26,7 +26,7 @@ public class NotificationEmailHandler
     public VoidResponse handle(NotificationEmailCommand command) {
 
         NotificationType type = command.getType() != null
-                ? NotificationType.valueOf(command.getType().toString().trim().toLowerCase(Locale.ROOT))
+                ? NotificationType.valueOf(command.getType().toString())
                 : NotificationType.email;
 
         NotificationEmail notification = new NotificationEmail(
